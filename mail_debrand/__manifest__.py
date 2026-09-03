@@ -18,4 +18,7 @@ Removes Odoo branding links from rendered outgoing emails while preserving the o
     "license": "AGPL-3",
     "installable": True,
     "depends": ["mail"],
+    "images": [
+        "static/description/banner.png",
+    ],
 }

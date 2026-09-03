@@ -1,200 +1,328 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mail Debrand</title>
+<div class="npt-mail-debrand">
     <style>
-        body {
-            margin: 0;
+        .npt-mail-debrand {
             color: #1f2933;
             font-family: Arial, Helvetica, sans-serif;
             line-height: 1.6;
-            background: #ffffff;
         }
-        .npt-page {
-            max-width: 980px;
-            margin: 0 auto;
-            padding: 32px 20px 48px;
-        }
-        .npt-header {
-            border-bottom: 1px solid #e5e7eb;
-            padding-bottom: 24px;
-            margin-bottom: 28px;
-        }
-        .npt-kicker {
-            margin: 0 0 8px;
+        .npt-mail-debrand .npt-kicker {
             color: #6b7280;
             font-size: 13px;
             font-weight: 700;
             letter-spacing: .04em;
             text-transform: uppercase;
         }
-        h1 {
-            margin: 0 0 12px;
+        .npt-mail-debrand .npt-title {
             color: #111827;
             font-size: 34px;
             line-height: 1.2;
         }
-        h2 {
-            margin: 32px 0 12px;
+        .npt-mail-debrand .npt-section-title {
             color: #111827;
             font-size: 22px;
             line-height: 1.3;
         }
-        p {
-            margin: 0 0 14px;
-        }
-        ul, ol {
-            margin: 0;
-            padding-left: 22px;
-        }
-        li {
-            margin: 8px 0;
-        }
-        .npt-lead {
-            max-width: 760px;
-            color: #374151;
-            font-size: 17px;
-        }
-        .npt-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 16px;
-            margin-top: 16px;
-        }
-        .npt-box {
+        .npt-mail-debrand .npt-feature-card {
+            background: #f9fafb;
             border: 1px solid #e5e7eb;
             border-radius: 8px;
+            height: 100%;
             padding: 18px;
-            background: #f9fafb;
         }
-        .npt-box strong {
+        .npt-mail-debrand .npt-feature-card strong {
+            color: #111827;
             display: block;
             margin-bottom: 6px;
-            color: #111827;
         }
-        .npt-note {
-            border-left: 4px solid #6b7280;
-            padding: 12px 16px;
+        .npt-mail-debrand .npt-note {
             background: #f9fafb;
+            border-left: 4px solid #6b7280;
             color: #374151;
+            padding: 12px 16px;
         }
-        .npt-publisher {
+        .npt-mail-debrand .npt-publisher {
             border-top: 1px solid #e5e7eb;
-            margin-top: 34px;
-            padding-top: 22px;
         }
-        a {
+        .npt-mail-debrand a {
             color: #0f766e;
             text-decoration: none;
         }
-        a:hover {
+        .npt-mail-debrand a:hover {
             text-decoration: underline;
         }
-        @media (max-width: 700px) {
-            .npt-page {
-                padding: 24px 16px 40px;
-            }
-            h1 {
-                font-size: 28px;
-            }
-            .npt-grid {
-                grid-template-columns: 1fr;
-            }
-        }
     </style>
-</head>
-<body>
-    <main class="npt-page">
-        <header class="npt-header">
-            <p class="npt-kicker">Odoo Mail</p>
-            <h1>Mail Debrand</h1>
-            <p class="npt-lead">
-                Removes Odoo branding links from outgoing email rendering while keeping the original user-written message body intact.
-            </p>
-        </header>
 
-        <section>
-            <h2>Overview</h2>
-            <p>
-                Mail Debrand extends Odoo mail rendering to remove links pointing to Odoo branding from outgoing email content.
-                It applies during mail template rendering and when preparing outgoing email bodies.
-            </p>
-        </section>
-
-        <section>
-            <h2>Key Features</h2>
-            <div class="npt-grid">
-                <div class="npt-box">
-                    <strong>Odoo branding link removal</strong>
-                    <p>Detects and removes rendered email anchors that link to odoo.com branding content.</p>
-                </div>
-                <div class="npt-box">
-                    <strong>Outgoing mail processing</strong>
-                    <p>Applies the cleanup when Odoo prepares outgoing mail bodies for sending.</p>
-                </div>
-                <div class="npt-box">
-                    <strong>Template rendering cleanup</strong>
-                    <p>Applies the same cleanup to rendered mail template output.</p>
-                </div>
-                <div class="npt-box">
-                    <strong>Message body preservation</strong>
-                    <p>Keeps the original message body content that users explicitly entered.</p>
+    <section>
+        <div class="container px-0">
+            <div class="row g-0">
+                <div class="col-12">
+                    <img
+                        src="banner.png"
+                        class="img-fluid w-100"
+                        alt="Mail Debrand for removing Odoo branding links from outgoing emails"
+                    >
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section>
-            <h2>How It Works</h2>
-            <ol>
-                <li>Install the module.</li>
-                <li>Odoo renders an email template or prepares an outgoing email body.</li>
-                <li>The module checks longer email HTML content for anchors that link to odoo.com.</li>
-                <li>Matching branding links are removed from the rendered output.</li>
-                <li>User-authored mail body content is preserved during outgoing mail preparation.</li>
-            </ol>
-        </section>
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="npt-kicker mb-2">Odoo Mail</p>
+                    <h1 class="npt-title mb-3">Mail Debrand</h1>
+                    <p class="mb-0">
+                        Mail Debrand removes Odoo branding links from rendered outgoing emails in Odoo Mail.
+                        It cleans mail template output and prepared outgoing email bodies while preserving the original message content written by users.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section>
-            <h2>Benefits</h2>
-            <ul>
-                <li>Helps keep outgoing business emails focused on your company communication.</li>
-                <li>Works automatically after installation without adding menus or configuration screens.</li>
-                <li>Preserves message content that users intentionally wrote in emails.</li>
-            </ul>
-        </section>
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="npt-section-title mb-3">Overview</h2>
+                    <p class="mb-0">
+                        This addon extends Odoo mail rendering to detect and remove anchors that link to Odoo branding content.
+                        The cleanup is applied when Odoo renders mail templates and when outgoing mail bodies are prepared for sending.
+                        User-entered body content is protected during outgoing mail preparation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section>
-            <h2>Screenshots</h2>
-            <p class="npt-note">
-                No product screenshots are included in this package. Add real screenshots under <strong>static/description/images/</strong> before publishing if screenshots are required for the listing.
-            </p>
-        </section>
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="npt-section-title mb-3">Key Features</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="npt-feature-card">
+                        <strong>Odoo branding link removal</strong>
+                        <p class="mb-0">Removes rendered email anchors that link to odoo.com branding content.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="npt-feature-card">
+                        <strong>Outgoing email body cleanup</strong>
+                        <p class="mb-0">Applies debranding when Odoo prepares outgoing mail bodies for delivery.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="npt-feature-card">
+                        <strong>Template rendering cleanup</strong>
+                        <p class="mb-0">Cleans rendered mail template output by processing `mail.render.mixin` results.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="npt-feature-card">
+                        <strong>Message body preservation</strong>
+                        <p class="mb-0">Keeps user-authored body content intact while removing surrounding Odoo branding links.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section>
-            <h2>Compatibility</h2>
-            <ul>
-                <li>Odoo 18.0</li>
-                <li>Requires the Odoo Mail app.</li>
-                <li>License: AGPL-3</li>
-            </ul>
-        </section>
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="npt-section-title mb-3">How It Works</h2>
+                    <ol class="mb-0">
+                        <li>Install the addon.</li>
+                        <li>Odoo renders an email template or prepares an outgoing email body.</li>
+                        <li>The addon checks longer HTML content for links pointing to odoo.com.</li>
+                        <li>Matching branding anchors are removed from the rendered output.</li>
+                        <li>When preparing outgoing mail, the original message body is preserved.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section>
-            <h2>Credits</h2>
-            <p>
-                This module contains work from the OCA Mail project and preserves its AGPL-3 license and source code copyright notices.
-            </p>
-        </section>
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="npt-section-title mb-3">Use Cases</h2>
+                    <ul class="mb-0">
+                        <li>Companies that want outgoing Odoo notification emails to avoid Odoo branding links.</li>
+                        <li>Databases that use standard Odoo mail layouts and need automatic email footer cleanup.</li>
+                        <li>Teams that need debranding without adding manual email editing steps.</li>
+                        <li>Mail templates where Odoo branding links should be removed from rendered output.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section class="npt-publisher">
-            <h2>Support / Publisher</h2>
-            <p>
-                <strong>Next Page Technologies Pvt Ltd</strong><br>
-                <a href="https://nextpagetechnologies.com" target="_blank" rel="noopener">https://nextpagetechnologies.com</a>
-            </p>
-        </section>
-    </main>
-</body>
-</html>
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="npt-section-title mb-3">Configuration / Setup</h2>
+                    <p class="mb-0">
+                        No configuration menu is added by this addon.
+                        Install it and the cleanup is applied automatically during supported Odoo mail rendering and outgoing mail preparation flows.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="npt-section-title mb-3">Outgoing Mail Debranding</h2>
+                    <p>
+                        The addon processes outgoing email HTML and removes Odoo branding links while keeping the actual email body content unchanged.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container px-0">
+            <div class="row g-0">
+                <div class="col-12">
+                    <img
+                        src="images/description_01.png"
+                        class="img-fluid w-100"
+                        alt="Odoo outgoing email debranding with user message content preserved"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="npt-section-title mb-3">Template Rendering Cleanup</h2>
+                    <p>
+                        During mail template rendering, links to Odoo branding are detected and removed from the rendered email output.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container px-0">
+            <div class="row g-0">
+                <div class="col-12">
+                    <img
+                        src="images/description_02.png"
+                        class="img-fluid w-100"
+                        alt="Odoo mail template rendering cleanup for branding links"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="npt-section-title mb-3">Business Benefits</h2>
+                    <ul class="mb-0">
+                        <li>Keeps outgoing business emails focused on company communication.</li>
+                        <li>Removes Odoo branding links automatically after installation.</li>
+                        <li>Preserves user-written email body content.</li>
+                        <li>Works in standard Odoo mail rendering and outgoing mail preparation flows.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="npt-section-title mb-3">Known Scope</h2>
+                    <p class="npt-note mb-0">
+                        This addon removes Odoo branding links detected in rendered email HTML. It does not claim complete debranding of every Odoo screen, report, website page, or non-mail feature.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="npt-section-title mb-3">Requirements / Dependencies</h2>
+                    <ul class="mb-0">
+                        <li>Odoo Mail</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="npt-section-title mb-3">Compatibility</h2>
+                    <ul class="mb-0">
+                        <li>Odoo 18.0</li>
+                        <li>Technical addon name: mail_debrand</li>
+                        <li>License: AGPL-3</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 npt-publisher pt-4">
+                    <h2 class="npt-section-title mb-3">Support / Contact</h2>
+                    <p class="mb-0">
+                        <strong>Next Page Technologies Pvt Ltd</strong><br>
+                        <a href="https://nextpagetechnologies.com" target="_blank" rel="noopener">https://nextpagetechnologies.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4">
+        <div class="container px-0">
+            <div class="row g-0">
+                <div class="col-12">
+                    <img
+                        src="images/contact_us.png"
+                        class="img-fluid w-100"
+                        alt="Contact Next Page Technologies Pvt Ltd for Odoo addon support"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="npt-section-title mb-3">Publisher</h2>
+                    <p class="mb-0">
+                        <strong>Next Page Technologies Pvt Ltd</strong><br>
+                        <a href="https://nextpagetechnologies.com" target="_blank" rel="noopener">https://nextpagetechnologies.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
